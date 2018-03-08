@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.static(process.cwd() + './public'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
