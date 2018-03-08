@@ -12,3 +12,12 @@ router.get('/', function (req, res) {
         res.render('index', hbsObject);
     });
 })
+ router.post('/', function (req, res) {
+     burger.create([
+         'burger_name', 'devoured'
+     ], [
+         req.body.burger_name, req.body.devoured
+     ], function(){
+         res.redirect('/');
+     });
+ })
