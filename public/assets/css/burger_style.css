@@ -3,11 +3,15 @@ h1 {
     text-align: center;
 };
 
-#leftSide {
-    height: 300px;
-    width: 300px;
-};
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 h2{
-     color: blue;
+     color: #ff8C00;
  };
+ .burgerAdd {
+     text-align: center;
+ }
