@@ -3,15 +3,21 @@ const connection = require('../config/connection.js');
 function printQuestionMarks(num) {
     let arr = [];
     for (let i = 0; i < num; i++) {
-        arr.push['?'];
+        arr.push('?');
     }
     return arr.toString();
 }
 
 function objToSql(ob) {
     var arr = [];
+    
     for (var key in ob) {
-        if (Object.hasOwntProperty.call(ob, key)){
+        let value = ob[key];
+
+        if (Object.hasOwnProperty.call(ob, key)){
+            if (typeof value === "string" && value.indexOf(" ") >= 0) {
+                value = "'" + value + "'";
+            }
             arr.push(key + '=' + ob[key]);
         }
     }
@@ -33,7 +39,7 @@ let orm = {
         let queryString = 'INSERT INTO ' + table;
         queryString += '(';
         queryString += cols.toString();
-        queryString += ')';
+        queryString += ') ';
         queryString += 'VALUES (';
         queryString += printQuestionMarks(vals.length);
         queryString += ') ';
