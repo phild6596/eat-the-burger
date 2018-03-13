@@ -13,12 +13,7 @@
                     {{#unless devoured}}
                 <li>
                     {{this.id}} {{this.burger_name}}
-                        <!--<button class="change-devoured" data-id="{{this.id}}" data-newdevoured="{{devour}}">
-                            {{#if devour}}Yummy!{{else}}Eat Me!{{/if}}
-                        </button>-->
-                    {{> burgers/burgers-block devour=true}}
-                    
-                    <!--<button class="delete-burger" data-id="{{this.id}}">Delete!</button>-->
+                        {{> burgers/burgers-block devour=true}}
                 </li>
                 {{/unless}}
                     {{/each}}
